@@ -1,6 +1,6 @@
 name: sales_reporting
 description: ''
-version: 0.0.1
+version: '1.0'
 author: maciej+webinar-2022@prophecy.io
 language: python
 buildSystem: wheel
@@ -23,7 +23,7 @@ pipelines:
         projectUID: 3890
         projectName: saas_ingestion
         version: saas_ingestion/1.0
-        author: null
+        author: ''
         repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=
         createdAt: '2022-11-03 15:38:41'
   pipelines/orders_cleanup:
@@ -44,7 +44,7 @@ pipelines:
         projectUID: 3890
         projectName: saas_ingestion
         version: saas_ingestion/1.0
-        author: null
+        author: ''
         repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=
         createdAt: '2022-11-03 15:42:24'
 datasets:
