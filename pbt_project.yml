@@ -1,6 +1,6 @@
 name: sales_reporting
 description: ''
-version: '1.0'
+version: '1.2'
 author: maciej+webinar-2022@prophecy.io
 language: python
 buildSystem: wheel
