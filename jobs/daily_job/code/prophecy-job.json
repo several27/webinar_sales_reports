@@ -1,0 +1,110 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "1034",
+    "jobId" : "jobs/daily_job",
+    "name" : "daily_job",
+    "schedule" : "0 0 0 * * ? *",
+    "enabled" : false,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "1034",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      }
+    } ]
+  },
+  "processes" : {
+    "P7do8P84EAX2AKktQF5JU$$RF9F9GUhXSnnZhI2aOsto" : {
+      "id" : "P7do8P84EAX2AKktQF5JU$$RF9F9GUhXSnnZhI2aOsto",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : 874.4000244140625,
+        "y" : 239.1999969482422
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "w2AWiO8MEqfWu-xqgv1Mh$$K854K97kT6QKTChYdtrr2"
+        } ],
+        "outputs" : [ {
+          "id" : "5UOW5mRPE2Fs0HWBW-dti$$-dBd80ywatd_kHZ3vVHOU"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/customers_cleanup",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "default" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "guZuwUeJ4T7gsAnut-W8Q$$L9gnJ17DmNS_LYjC8ofFE" : {
+      "id" : "guZuwUeJ4T7gsAnut-W8Q$$L9gnJ17DmNS_LYjC8ofFE",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_1",
+        "slug" : "Pipeline_1",
+        "x" : 878.7999877929688,
+        "y" : 427.6000061035156
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4A77Lgo1dyLfu8WjKP1JR$$eNmPyqxb38E9aQeWmG5fD"
+        } ],
+        "outputs" : [ {
+          "id" : "ONnq_Hk4cPKhUFNf_IYGL$$oNs4LyRiBH3hya2VGyAs7"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/orders_cleanup",
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "default" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    }
+  },
+  "connections" : [ ]
+}
