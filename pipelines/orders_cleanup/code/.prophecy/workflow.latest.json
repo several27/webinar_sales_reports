@@ -1,0 +1,209 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1034",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default"
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "orders_cleanup"
+  },
+  "connections" : [ {
+    "id" : "FSzRITvHYRyQ9-1pG-ch2",
+    "source" : "BhlctgXEszP-S4AYzhcwq$$Er-0zYRQH7FUYYSO9-qDh",
+    "sourcePort" : "jkAu8nG77LqKXYMSMNYFH$$1AqlykIgQGcDU9qbfoIPx",
+    "target" : "xMXH_ldVYof62SA85yddZ$$v88j_9qza9EbmCVug9DkU",
+    "targetPort" : "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I"
+  }, {
+    "id" : "Glb2FjhXDFrSjKqlH2QmM",
+    "source" : "xMXH_ldVYof62SA85yddZ$$v88j_9qza9EbmCVug9DkU",
+    "sourcePort" : "PaWb6CjcHWvRY1ZtMGnpR$$xbWYjUtlfgfne6gJG4kdj",
+    "target" : "E056ru5oBIWYxqIE9RdOo$$m_b7WxTSXBvVBCkhu3Wb6",
+    "targetPort" : "oFVpyKhUK_hy1kT9bcibw$$udjgkLUpdAtFWXx4ySQcX"
+  } ],
+  "processes" : {
+    "xMXH_ldVYof62SA85yddZ$$v88j_9qza9EbmCVug9DkU" : {
+      "id" : "xMXH_ldVYof62SA85yddZ$$v88j_9qza9EbmCVug9DkU",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "cleanup",
+        "slug" : "cleanup",
+        "x" : 430,
+        "y" : 206.79999999999995,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "PaWb6CjcHWvRY1ZtMGnpR$$xbWYjUtlfgfne6gJG4kdj",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "OrderKey",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_orderkey"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderCustomerKey",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_custkey"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderStatus",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_orderstatus"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderTotalPrice",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_totalprice"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderDate",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_orderdate"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderPriority",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_orderpriority"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderClerk",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_clerk"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderShipPriority",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_shippriority"
+          },
+          "description" : ""
+        }, {
+          "target" : "OrderComment",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "o_comment"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_clerk", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_orderdate", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_orderstatus", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_comment", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_orderkey", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_shippriority", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_totalprice", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_orderpriority", "Rfg5KIXN-gIdOc-fcYkKE$$CQ-W9QVaYdPiNvc5Coc4I##o_custkey" ]
+      }
+    },
+    "E056ru5oBIWYxqIE9RdOo$$m_b7WxTSXBvVBCkhu3Wb6" : {
+      "id" : "E056ru5oBIWYxqIE9RdOo$$m_b7WxTSXBvVBCkhu3Wb6",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "silver_sales_orders",
+        "slug" : "silver_sales_orders",
+        "x" : 727.5999999999999,
+        "y" : 203.2,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oFVpyKhUK_hy1kT9bcibw$$udjgkLUpdAtFWXx4ySQcX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver_sales_orders"
+      }
+    },
+    "BhlctgXEszP-S4AYzhcwq$$Er-0zYRQH7FUYYSO9-qDh" : {
+      "id" : "BhlctgXEszP-S4AYzhcwq$$Er-0zYRQH7FUYYSO9-qDh",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "bronze_orders_0",
+        "slug" : "bronze_orders_0",
+        "x" : 165.20000000000005,
+        "y" : 208,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "jkAu8nG77LqKXYMSMNYFH$$1AqlykIgQGcDU9qbfoIPx",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_orders"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

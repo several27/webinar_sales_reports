@@ -1,0 +1,202 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1034",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default"
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "customers_cleanup"
+  },
+  "connections" : [ {
+    "id" : "BwK9PcbtCG2TrFgAVdyqS",
+    "source" : "ZLvgRwaarZwd2-7zfrUKP$$NwIzKhRXTEXR6HhlQ52mo",
+    "sourcePort" : "n5YxgNI7Ex1CjHQvXiDsY$$gFC-VQJjw3k-RK5hu6O9U",
+    "target" : "DPYBwAQnHf7ESZ2cxxR_8$$otMNbGWDsl03i-BcdMoAW",
+    "targetPort" : "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv"
+  }, {
+    "id" : "v5auzmOeXOaxVQ_RvPxzT",
+    "source" : "DPYBwAQnHf7ESZ2cxxR_8$$otMNbGWDsl03i-BcdMoAW",
+    "sourcePort" : "u-JY3iYetquQWenEdw1a5$$tVilZMLBZYAk6YRd_BGTe",
+    "target" : "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2",
+    "targetPort" : "N5YWAToS0CvY2XQOaY8aT$$qO07_iheEZRAIU-nWlUhi"
+  } ],
+  "processes" : {
+    "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2" : {
+      "id" : "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "silver_sales_customers",
+        "slug" : "silver_sales_customers",
+        "x" : 652.7999999999997,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "N5YWAToS0CvY2XQOaY8aT$$qO07_iheEZRAIU-nWlUhi",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver_sales_customers"
+      }
+    },
+    "ZLvgRwaarZwd2-7zfrUKP$$NwIzKhRXTEXR6HhlQ52mo" : {
+      "id" : "ZLvgRwaarZwd2-7zfrUKP$$NwIzKhRXTEXR6HhlQ52mo",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "bronze_customers_0",
+        "slug" : "bronze_customers_0",
+        "x" : 140,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "n5YxgNI7Ex1CjHQvXiDsY$$gFC-VQJjw3k-RK5hu6O9U",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_customers"
+      }
+    },
+    "DPYBwAQnHf7ESZ2cxxR_8$$otMNbGWDsl03i-BcdMoAW" : {
+      "id" : "DPYBwAQnHf7ESZ2cxxR_8$$otMNbGWDsl03i-BcdMoAW",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "cleanup",
+        "slug" : "cleanup",
+        "x" : 400,
+        "y" : 160,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "u-JY3iYetquQWenEdw1a5$$tVilZMLBZYAk6YRd_BGTe",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "CustomerKey",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_custkey"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_name"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerAddress",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_address"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerNationKey",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_nationkey"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerPhone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_phone"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerAccountBalance",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "floor(c_acctbal)"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerMarketingSegment",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_mktsegment"
+          },
+          "description" : ""
+        }, {
+          "target" : "CustomerComment",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "c_comment"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_phone", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_address", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_acctbal", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_mktsegment", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_name", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_comment", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_custkey", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_nationkey" ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

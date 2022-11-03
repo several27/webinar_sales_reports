@@ -1,0 +1,81 @@
+name: sales_reporting
+description: ''
+version: 0.0.1
+author: maciej+webinar-2022@prophecy.io
+language: python
+buildSystem: wheel
+pipelines:
+  pipelines/customers_cleanup:
+    name: customers_cleanup
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-11-03 15:38:31'
+    datasets:
+      inputs:
+      - gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_customers
+      outputs:
+      - datasets/silver_sales_customers
+    dependencies:
+      project/3890:
+        name: project/3890
+        projectUID: 3890
+        projectName: saas_ingestion
+        version: saas_ingestion/1.0
+        author: null
+        repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=
+        createdAt: '2022-11-03 15:38:41'
+  pipelines/orders_cleanup:
+    name: orders_cleanup
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-11-03 15:42:03'
+    datasets:
+      inputs:
+      - gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_orders
+      outputs:
+      - datasets/silver_sales_orders
+    dependencies:
+      project/3890:
+        name: project/3890
+        projectUID: 3890
+        projectName: saas_ingestion
+        version: saas_ingestion/1.0
+        author: null
+        repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=
+        createdAt: '2022-11-03 15:42:24'
+datasets:
+  datasets/silver_sales_customers:
+    name: silver_sales_customers
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    createdAt: '2022-11-03 15:39:51'
+    physicalDatasets:
+      dev:
+        fabricId: 1034
+        datasetType: Database
+        description: ''
+        author: maciej+webinar-2022@prophecy.io
+        createdAt: '2022-11-03 15:39:51'
+  datasets/silver_sales_orders:
+    name: silver_sales_orders
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    createdAt: '2022-11-03 15:43:45'
+    physicalDatasets:
+      dev:
+        fabricId: 1034
+        datasetType: Database
+        description: ''
+        author: maciej+webinar-2022@prophecy.io
+        createdAt: '2022-11-03 15:43:45'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'
