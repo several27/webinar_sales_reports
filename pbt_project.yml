@@ -64,6 +64,23 @@ pipelines:
       outputs:
       - datasets/final_report
     dependencies: {}
+  pipelines/monthly_reporting:
+    name: monthly_reporting
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-11-03 17:26:29'
+    datasets:
+      inputs:
+      - datasets/silver_sales_customers
+      - datasets/silver_orders_sales_2
+      - datasets/customers_nations
+      - datasets/regions
+      - datasets/nations
+      outputs:
+      - datasets/final_gold_report
+    dependencies: {}
 datasets:
   datasets/customers_nations:
     name: customers_nations
@@ -89,6 +106,18 @@ datasets:
         description: ''
         author: maciej+webinar-2022@prophecy.io
         createdAt: '2022-11-03 15:53:47'
+  datasets/final_gold_report:
+    name: final_gold_report
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    createdAt: '2022-11-03 17:33:25'
+    physicalDatasets:
+      dev:
+        fabricId: 1034
+        datasetType: Database
+        description: ''
+        author: maciej+webinar-2022@prophecy.io
+        createdAt: '2022-11-03 17:33:25'
   datasets/nations:
     name: nations
     description: ''
@@ -137,6 +166,18 @@ datasets:
         description: ''
         author: maciej+webinar-2022@prophecy.io
         createdAt: '2022-11-03 15:58:34'
+  datasets/silver_orders_sales_2:
+    name: silver_orders_sales_2
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    createdAt: '2022-11-03 17:28:44'
+    physicalDatasets:
+      dev:
+        fabricId: 1034
+        datasetType: Database
+        description: ''
+        author: maciej+webinar-2022@prophecy.io
+        createdAt: '2022-11-03 17:28:44'
 templates: {}
 jobs:
   jobs/daily_job:
@@ -164,6 +205,30 @@ jobs:
     enabled: null
     createdAt: '2022-11-03 16:11:32'
     author: maciej+webinar-2022@prophecy.io
+  jobs/monthly_job:
+    name: monthly_job
+    description: ''
+    fabricUID: 1034
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: maciej@prophecy.io
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/monthly_reporting
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2022-11-03 17:34:22'
+    author: maciej+webinar-2022@prophecy.io
 libraries: []
 subgraphs:
   subgraphs/enrich_customers:
@@ -174,4 +239,4 @@ subgraphs:
     createdAt: '2022-11-03 15:51:39'
 sqlModels: {}
 sqlPipeline: null
-dependencies: '[]'
+dependencies: []

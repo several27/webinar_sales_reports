@@ -32,8 +32,8 @@
     "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
-      "enabled" : false,
-      "value" : 1000
+      "enabled" : true,
+      "value" : 10000
     },
     "topLevelPackage" : "mrr_reporting"
   },
