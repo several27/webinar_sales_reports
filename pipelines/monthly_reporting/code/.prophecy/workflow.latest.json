@@ -18,9 +18,15 @@
         "type" : "record",
         "fields" : [ ]
       },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default"
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
     },
     "sparkConf" : [ ],
     "hadoopConf" : [ ],
@@ -75,8 +81,8 @@
       "metadata" : {
         "label" : "final_gold_report",
         "slug" : "final_gold_report",
-        "x" : 872.5999999999998,
-        "y" : 230.5,
+        "x" : 880,
+        "y" : 240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -85,7 +91,8 @@
       "ports" : {
         "inputs" : [ {
           "id" : "I_p7WP1slatKDsZv8uKcx$$l03zYszHwD65goYQBf9Wr",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -101,8 +108,8 @@
       "metadata" : {
         "label" : "silver_orders_sales_2",
         "slug" : "silver_orders_sales_2",
-        "x" : 2.599999999999909,
-        "y" : 312.09999999999997,
+        "x" : 0,
+        "y" : 320,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -112,7 +119,8 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "Qwgo0OQY7fPcDl05SpVMM$$EhXBOp0hUmFkJ8Q7dfLo0",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -127,8 +135,8 @@
       "metadata" : {
         "label" : "by_customer_key",
         "slug" : "by_customer_key",
-        "x" : 225.79999999999995,
-        "y" : 230.5,
+        "x" : 220,
+        "y" : 240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -137,14 +145,17 @@
       "ports" : {
         "inputs" : [ {
           "id" : "TGWO9U1HGEoFU7Ss6bcBN$$NScd7WPtwIu7Sl5swt4oT",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         }, {
           "id" : "MsEvNgHHwaTtNcpu_g3rH$$XGcR2HU5l_1fKvK-8ZHNc",
-          "slug" : "in1"
+          "slug" : "in1",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "j6TeV-AjUf1IL4vdy8Ezw$$PwJIRTNy9D5bV05vFiBKu",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -184,8 +195,8 @@
       "metadata" : {
         "label" : "sum_amounts",
         "slug" : "sum_amounts",
-        "x" : 422.6,
-        "y" : 231.7,
+        "x" : 420,
+        "y" : 240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -194,11 +205,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "l929N_H0zcI1RwLJUMYhg$$PUqcA00TBCE-WdV23piC6",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -219,7 +232,7 @@
         "pivotColumn" : null,
         "pivotValues" : [ ],
         "activeTab" : "aggregate",
-        "columnsSelector" : [ "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE##OrderDate", "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE##OrderTotalPrice", "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE##CustomerKey" ],
+        "columnsSelector" : [ "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE##OrderTotalPrice", "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE##CustomerKey", "gM5zG9rSd9OgFZcsBCmZI$$ABYA1bxTEQLeDGHu465bE##OrderDate" ],
         "groupBy" : [ {
           "target" : "CustomerKey",
           "expression" : {
@@ -245,8 +258,8 @@
       "metadata" : {
         "label" : "enrich_customers_1",
         "slug" : "enrich_customers_1",
-        "x" : 638.5999999999999,
-        "y" : 232.9,
+        "x" : 640,
+        "y" : 240,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -255,11 +268,13 @@
       "ports" : {
         "inputs" : [ {
           "id" : "mHIvi3dLb6QJGvYMuuNm1$$8otKsKhOscEORFeCi-QLu",
-          "slug" : "in0"
+          "slug" : "in0",
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "xRzkUcvuDaviReiR4bqUp$$t0DV6gHtjWe2PRjEGueP_",
-          "slug" : "out0"
+          "slug" : "out0",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -323,11 +338,13 @@
           "ports" : {
             "inputs" : [ {
               "id" : "z0Znauzpfc14MEcc8bXyt$$abaXTETPVr06AfFELsX8B",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "nDw1vhTYIrZj60j-j31vM$$7nq0UoxxdNdsQ8y_MC5Ng",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -392,7 +409,8 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "m77y2XSq8p9enFpAy6TFk$$bVsvC-op0SxbAcdV6Qb4i",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -417,20 +435,25 @@
           "ports" : {
             "inputs" : [ {
               "id" : "OPJoDTjAXrVGNxPqh-ews$$dHJ4z6czRfmL3Y2jA2AQF",
-              "slug" : "in0"
+              "slug" : "in0",
+              "isStreaming" : false
             }, {
               "id" : "AHEFPggGrSTY9vcDjnaKS$$Qc023Ku1LEesE2gdiJDHb",
-              "slug" : "in1"
+              "slug" : "in1",
+              "isStreaming" : false
             }, {
               "id" : "UnBvmKWNRR_3cze4UXJxS$$FxTyof226EJU5_Dn81W-H",
-              "slug" : "in2"
+              "slug" : "in2",
+              "isStreaming" : false
             }, {
               "id" : "V8Ieq7nIyl7jcQEmCOZF3$$Vox9zO28iEWePfR6Z_Yd3",
-              "slug" : "in3"
+              "slug" : "in3",
+              "isStreaming" : false
             } ],
             "outputs" : [ {
               "id" : "zWnHimvYmgxXrlMT-9PGR$$C1Nx4_Rtoz-dLjb1u7yAv",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -545,7 +568,8 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "nM2dZIWGSYXzff9TRGy2Z$$36CTef9jfSwOXlJI7xqXC",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -571,7 +595,8 @@
             "inputs" : [ ],
             "outputs" : [ {
               "id" : "3BfdCopVYZX-PrxwGW3XF$$Ule8nEfVdKKE4J_nSF8uq",
-              "slug" : "out"
+              "slug" : "out",
+              "isStreaming" : false
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : false
@@ -588,8 +613,8 @@
       "metadata" : {
         "label" : "silver_sales_customers_0",
         "slug" : "silver_sales_customers_0",
-        "x" : 3,
-        "y" : 93.70000000000003,
+        "x" : 0,
+        "y" : 100,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -599,7 +624,8 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "0GuqR0wgNSYXYAs7rlChx$$BuGha8w4OQlAe8w_8h5TX",
-          "slug" : "out"
+          "slug" : "out",
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false

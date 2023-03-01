@@ -1,8 +1,8 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-from monthly_reporting.config.ConfigStore import *
-from monthly_reporting.udfs.UDFs import *
+from mrr_reporting.config.ConfigStore import *
+from mrr_reporting.udfs.UDFs import *
 
 def with_nations_regions(
         spark: SparkSession,

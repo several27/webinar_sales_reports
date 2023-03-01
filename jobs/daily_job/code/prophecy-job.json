@@ -5,6 +5,9 @@
     "jobId" : "jobs/daily_job",
     "name" : "daily_job",
     "schedule" : "0 0 0 * * ? *",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
     "enabled" : false,
     "defaultClusterSize" : "small",
     "alerting" : {
@@ -29,6 +32,25 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1394",
+      "name" : "dev-uc",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     } ]
   },
@@ -39,8 +61,8 @@
       "metadata" : {
         "label" : "Pipeline_0",
         "slug" : "Pipeline_0",
-        "x" : 874.4000244140625,
-        "y" : 239.1999969482422
+        "x" : 920,
+        "y" : 200
       },
       "ports" : {
         "inputs" : [ {
@@ -63,7 +85,9 @@
         "pipelineId" : "pipelines/customers_cleanup",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default" ],
+          "instances" : {
+            "sales_reporting" : [ "default" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
@@ -75,8 +99,8 @@
       "metadata" : {
         "label" : "Pipeline_1",
         "slug" : "Pipeline_1",
-        "x" : 878.7999877929688,
-        "y" : 427.6000061035156
+        "x" : 920,
+        "y" : 380
       },
       "ports" : {
         "inputs" : [ {
@@ -99,7 +123,9 @@
         "pipelineId" : "pipelines/orders_cleanup",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default" ],
+          "instances" : {
+            "sales_reporting" : [ "default" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }

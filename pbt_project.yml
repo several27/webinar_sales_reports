@@ -5,27 +5,40 @@ author: maciej+webinar-2022@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
-  pipelines/customers_cleanup:
-    name: customers_cleanup
+  pipelines/monthly_reporting:
+    name: monthly_reporting
     description: ''
     author: maciej+webinar-2022@prophecy.io
     mode: batch
     language: python
-    createdAt: '2022-11-03 15:38:31'
+    createdAt: '2022-11-03 17:26:29'
     datasets:
       inputs:
-      - gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_customers
-      outputs:
+      - datasets/customers_nations
+      - datasets/nations
+      - datasets/regions
+      - datasets/silver_orders_sales_2
       - datasets/silver_sales_customers
-    dependencies:
-      project/3890:
-        name: project/3890
-        projectUID: 3890
-        projectName: saas_ingestion
-        version: saas_ingestion/1.0
-        author: ''
-        repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=
-        createdAt: '2022-11-03 15:38:41'
+      outputs:
+      - datasets/final_gold_report
+    dependencies: {}
+  pipelines/mrr_reporting:
+    name: mrr_reporting
+    description: ''
+    author: maciej+webinar-2022@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-11-03 15:48:16'
+    datasets:
+      inputs:
+      - datasets/customers_nations
+      - datasets/nations
+      - datasets/regions
+      - datasets/silver_sales_customers
+      - datasets/silver_sales_orders
+      outputs:
+      - datasets/final_report
+    dependencies: {}
   pipelines/orders_cleanup:
     name: orders_cleanup
     description: ''
@@ -38,48 +51,41 @@ pipelines:
       - gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_orders
       outputs:
       - datasets/silver_sales_orders
-    dependencies:
-      project/3890:
-        name: project/3890
-        projectUID: 3890
-        projectName: saas_ingestion
-        version: saas_ingestion/1.0
-        author: ''
-        repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=
-        createdAt: '2022-11-03 15:42:24'
-  pipelines/mrr_reporting:
-    name: mrr_reporting
-    description: ''
-    author: maciej+webinar-2022@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-11-03 15:48:16'
-    datasets:
-      inputs:
-      - datasets/silver_sales_customers
-      - datasets/silver_sales_orders
-      - datasets/customers_nations
-      - datasets/nations
-      - datasets/regions
-      outputs:
-      - datasets/final_report
     dependencies: {}
-  pipelines/monthly_reporting:
-    name: monthly_reporting
+  pipelines/customers_cleanup:
+    name: customers_cleanup
     description: ''
     author: maciej+webinar-2022@prophecy.io
     mode: batch
     language: python
-    createdAt: '2022-11-03 17:26:29'
+    createdAt: '2022-11-03 15:38:31'
     datasets:
       inputs:
-      - datasets/silver_sales_customers
-      - datasets/silver_orders_sales_2
-      - datasets/customers_nations
-      - datasets/regions
-      - datasets/nations
+      - gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_customers
       outputs:
-      - datasets/final_gold_report
+      - datasets/silver_sales_customers
+    dependencies: {}
+  pipelines/qwe:
+    name: qwe
+    description: null
+    author: maciej+webinar-2022@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-12 17:28:29'
+    datasets:
+      inputs: []
+      outputs: []
+    dependencies: {}
+  pipelines/fedex_demo:
+    name: fedex_demo
+    description: null
+    author: maciej+webinar-2022@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-01-12 06:54:12'
+    datasets:
+      inputs: []
+      outputs: []
     dependencies: {}
 datasets:
   datasets/customers_nations:
@@ -87,6 +93,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 15:52:55'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -99,6 +106,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 15:53:47'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -111,6 +119,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 17:33:25'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -123,6 +132,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 15:53:21'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -135,6 +145,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 15:39:51'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -147,6 +158,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 15:43:45'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -159,6 +171,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 15:58:34'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -171,6 +184,7 @@ datasets:
     description: ''
     author: maciej+webinar-2022@prophecy.io
     createdAt: '2022-11-03 17:28:44'
+    mode: batch
     physicalDatasets:
       dev:
         fabricId: 1034
@@ -236,7 +250,17 @@ subgraphs:
     description: Enriches customers data
     author: maciej+webinar-2022@prophecy.io
     language: python
+    mode: batch
     createdAt: '2022-11-03 15:51:39'
 sqlModels: {}
 sqlPipeline: null
 dependencies: []
+projectDependencies:
+  '3890':
+    projectUID: 3890
+    projectName: ''
+    repositoryPath: gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890
+    version: saas_ingestion/1.0
+    author: null
+    createdAt: '2022-11-28 16:09:32'
+pipelineConfigurations: {}

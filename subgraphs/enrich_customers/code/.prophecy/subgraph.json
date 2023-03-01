@@ -14,11 +14,13 @@
   "ports" : {
     "inputs" : [ {
       "id" : "mHIvi3dLb6QJGvYMuuNm1",
-      "slug" : "in0"
+      "slug" : "in0",
+      "isStreaming" : false
     } ],
     "outputs" : [ {
       "id" : "xRzkUcvuDaviReiR4bqUp",
-      "slug" : "out0"
+      "slug" : "out0",
+      "isStreaming" : false
     } ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
@@ -158,6 +160,7 @@
         } ],
         "datasetId" : "datasets/customers_nations",
         "updated" : true,
+        "currentDatasetId" : "datasets/customers_nations",
         "dataset" : {
           "mergeCondition" : null,
           "minFlagCol" : null,

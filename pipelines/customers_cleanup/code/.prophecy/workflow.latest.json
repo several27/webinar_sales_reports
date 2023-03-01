@@ -18,9 +18,15 @@
         "type" : "record",
         "fields" : [ ]
       },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default"
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
     },
     "sparkConf" : [ ],
     "hadoopConf" : [ ],
@@ -51,40 +57,14 @@
     "targetPort" : "N5YWAToS0CvY2XQOaY8aT$$qO07_iheEZRAIU-nWlUhi"
   } ],
   "processes" : {
-    "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2" : {
-      "id" : "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2",
-      "component" : "Target",
-      "metadata" : {
-        "label" : "silver_sales_customers",
-        "slug" : "silver_sales_customers",
-        "x" : 652.7999999999997,
-        "y" : 160,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "N5YWAToS0CvY2XQOaY8aT$$qO07_iheEZRAIU-nWlUhi",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/silver_sales_customers"
-      }
-    },
     "ZLvgRwaarZwd2-7zfrUKP$$NwIzKhRXTEXR6HhlQ52mo" : {
       "id" : "ZLvgRwaarZwd2-7zfrUKP$$NwIzKhRXTEXR6HhlQ52mo",
       "component" : "Source",
       "metadata" : {
         "label" : "bronze_customers_0",
         "slug" : "bronze_customers_0",
-        "x" : 140,
-        "y" : 160,
+        "x" : 343.9999999999999,
+        "y" : 34,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -103,14 +83,40 @@
         "datasetId" : "gitUri=http://gitserver:3000/pM1sUhx1_team_2518/pM1sUhx1_project_3890.git&subPath=&tag=saas_ingestion/1.0&projectSubscriptionProjectId=3890&path=datasets/bronze_customers"
       }
     },
+    "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2" : {
+      "id" : "c-EDkkcfZBQmKXnLzNLG4$$7idq1MsW4gd7oGvlIAEE2",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "silver_sales_customers",
+        "slug" : "silver_sales_customers",
+        "x" : 856.7999999999996,
+        "y" : 34,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "N5YWAToS0CvY2XQOaY8aT$$qO07_iheEZRAIU-nWlUhi",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/silver_sales_customers"
+      }
+    },
     "DPYBwAQnHf7ESZ2cxxR_8$$otMNbGWDsl03i-BcdMoAW" : {
       "id" : "DPYBwAQnHf7ESZ2cxxR_8$$otMNbGWDsl03i-BcdMoAW",
       "component" : "Reformat",
       "metadata" : {
         "label" : "cleanup",
         "slug" : "cleanup",
-        "x" : 400,
-        "y" : 160,
+        "x" : 603.9999999999999,
+        "y" : 34,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -189,7 +195,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_phone", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_address", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_acctbal", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_mktsegment", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_name", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_comment", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_custkey", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_nationkey" ]
+        "columnsSelector" : [ "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_acctbal", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_name", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_phone", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_address", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_mktsegment", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_nationkey", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_custkey", "AM-tiJz8ONAyAOfoBNZ1L$$oCgnYmftN83iCB16HRrzv##c_comment" ]
       }
     }
   },

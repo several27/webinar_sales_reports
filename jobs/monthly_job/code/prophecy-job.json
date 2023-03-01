@@ -5,6 +5,9 @@
     "jobId" : "jobs/monthly_job",
     "name" : "monthly_job",
     "schedule" : "0 0 0 1 * ? *",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
     "enabled" : false,
     "defaultClusterSize" : "small",
     "alerting" : {
@@ -29,6 +32,12 @@
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
       }
     } ]
   },
@@ -63,7 +72,9 @@
         "pipelineId" : "pipelines/monthly_reporting",
         "configurations" : {
           "schema" : [ ],
-          "instances" : [ "default" ],
+          "instances" : {
+            "sales_reporting" : [ "default" ]
+          },
           "overrides" : { },
           "selectedInstance" : "default"
         }
